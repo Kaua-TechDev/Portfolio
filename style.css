@@ -1,0 +1,18 @@
+body{
+    background-color: black;
+    color: white;
+    text-align: center;
+    margin: 10px; 
+    list-style: none;
+    padding: 15px;
+    border: 3px groove grey;
+}
+
+#Alinhar{
+    justify-content: center;
+    list-style: none;
+    display: flex;
+    gap: 10px;
+    font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+    font-size: 20px; 
+}
