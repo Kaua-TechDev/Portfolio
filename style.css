@@ -8,11 +8,97 @@ body{
     border: 3px groove grey;
 }
 
-#Alinhar{
+.navegacao{
     justify-content: center;
     list-style: none;
     display: flex;
-    gap: 10px;
+    gap: 60px;
+    font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+    font-size: 20px;
+}
+
+.alinharHorizontalmente{
+    justify-content: center;
+    list-style: none;
+    display: flex;
+    gap: 40px;
     font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
     font-size: 20px; 
 }
+
+.alinharVerticalmente{
+    justify-content: center;
+    list-style: none;
+    gap: 40px;
+    font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+    font-size: 20px; 
+}
+
+header .cabecalho{
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.cabecalho nav ul li{
+    display: flex;
+    gap: 50px;
+    list-style: none;
+}
+
+.cabecalho nav ul li a{
+    color:  darkgray;
+    text-decoration: none;
+    font-size: 25px;
+}
+
+.sobre{
+    font-size: 15px;
+    line-height: 22px;
+    gap: 90px;
+}
+
+/* section.projetos{
+}*/
+
+.projetos h2{
+    color:gray;
+    font-size: 30px;
+    margin-bottom: 40px;
+    text-align: center;
+    padding: 10px;
+}
+
+.box{
+    display: flex;   
+    gap: 25px;
+    margin-bottom: 40px;
+}
+
+.project{
+    color: #ffffff;
+    padding: 20px;
+    font-size: 20px;
+    border: 1px solid darkblue;
+}
+
+.imagem{
+    animation: mover 2s infinite alternate;
+    display: flex;
+}
+
+.project h3{
+    color: #ffffff;
+    font-size: 30px;
+    text-align: center;
+    padding: 10px;
+}
+
+/*@keyframes mover{
+    0%{
+        transform: translateY(0);
+    }
+    100%{
+        transform: translateY(10px);
+    }
+}*/
