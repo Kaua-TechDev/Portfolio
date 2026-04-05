@@ -1,104 +1,298 @@
-body{
-    background-color: black;
-    color: white;
-    text-align: center;
-    margin: 10px; 
-    list-style: none;
-    padding: 15px;
-    border: 3px groove grey;
+:root {
+    --bg: #000000;
+    --surface: #0d0d0d;
+    --surface-alt: #121212;
+    --text: #f4f4f4;
+    --muted: #bdbdbd;
+    --line: #2d2d2d;
+    --highlight: #f0f0f0;
 }
 
-.navegacao{
-    justify-content: center;
-    list-style: none;
-    display: flex;
-    gap: 60px;
-    font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
-    font-size: 20px;
+* {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
 }
 
-.alinharHorizontalmente{
-    justify-content: center;
-    list-style: none;
-    display: flex;
-    gap: 40px;
-    font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
-    font-size: 20px; 
+html {
+    scroll-behavior: smooth;
 }
 
-.alinharVerticalmente{
-    justify-content: center;
-    list-style: none;
-    gap: 40px;
-    font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
-    font-size: 20px; 
+body {
+    background:
+        radial-gradient(circle at top right, rgba(255, 255, 255, 0.08), transparent 18%),
+        radial-gradient(circle at left center, rgba(255, 255, 255, 0.05), transparent 22%),
+        var(--bg);
+    color: var(--text);
+    font-family: "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
+    min-height: 100vh;
 }
 
-header .cabecalho{
+a {
+    color: inherit;
+}
+
+img {
+    display: block;
+    max-width: 100%;
+}
+
+.pagina {
+    width: min(1120px, calc(100% - 32px));
+    margin: 24px auto;
+    padding: 24px;
+    border: 1px solid var(--line);
+    background-color: rgba(0, 0, 0, 0.78);
+}
+
+.topo {
     display: flex;
     justify-content: space-between;
     align-items: center;
+    gap: 24px;
+    padding-bottom: 20px;
+    border-bottom: 1px solid var(--line);
 }
 
-.cabecalho nav ul li{
-    display: flex;
-    gap: 50px;
+.marca {
+    font-size: 1.3rem;
+    font-weight: 700;
+    letter-spacing: 0.08em;
+    text-transform: uppercase;
+}
+
+.menu {
     list-style: none;
-}
-
-.cabecalho nav ul li a{
-    color:  darkgray;
-    text-decoration: none;
-    font-size: 25px;
-}
-
-.sobre{
-    font-size: 15px;
-    line-height: 22px;
-    gap: 90px;
-}
-
-/* section.projetos{
-}*/
-
-.projetos h2{
-    color:gray;
-    font-size: 30px;
-    margin-bottom: 40px;
-    text-align: center;
-    padding: 10px;
-}
-
-.box{
-    display: flex;   
-    gap: 25px;
-    margin-bottom: 40px;
-}
-
-.project{
-    color: #ffffff;
-    padding: 20px;
-    font-size: 20px;
-    border: 1px solid darkblue;
-}
-
-.imagem{
-    animation: mover 2s infinite alternate;
     display: flex;
+    gap: 28px;
+    flex-wrap: wrap;
 }
 
-.project h3{
-    color: #ffffff;
-    font-size: 30px;
+.menu a {
+    color: var(--muted);
+    text-decoration: none;
+    font-size: 0.95rem;
+    transition: color 0.25s ease;
+}
+
+.menu a:hover {
+    color: var(--highlight);
+}
+
+main {
+    display: flex;
+    flex-direction: column;
+    gap: 72px;
+    padding: 56px 0;
+}
+
+.hero {
+    display: grid;
+    grid-template-columns: minmax(0, 1.5fr) minmax(260px, 360px);
+    align-items: center;
+    gap: 40px;
+}
+
+.destaque {
+    color: var(--muted);
+    text-transform: uppercase;
+    letter-spacing: 0.18em;
+    font-size: 0.8rem;
+    margin-bottom: 18px;
+}
+
+.hero h1,
+.secao h2 {
+    font-family: Georgia, "Times New Roman", serif;
+}
+
+.hero h1 {
+    font-size: clamp(2.4rem, 6vw, 4.5rem);
+    line-height: 1.05;
+    margin-bottom: 20px;
+}
+
+.descricao-principal,
+.descricao-secundaria,
+.secao-intro,
+.card-skill p,
+.card-projeto p,
+.texto-apoio,
+.contato p {
+    color: var(--muted);
+    font-size: 1rem;
+    line-height: 1.8;
+}
+
+.descricao-secundaria {
+    margin-top: 14px;
+}
+
+.hero-imagem {
+    display: flex;
+    justify-content: center;
+}
+
+.moldura-imagem {
+    width: min(320px, 100%);
+    aspect-ratio: 4 / 5;
+    border-radius: 28px;
+    padding: 0;
+    border: 1px solid var(--line);
+    background: linear-gradient(145deg, #1a1a1a, #050505);
+    box-shadow: 0 0 0 10px rgba(255, 255, 255, 0.03);
+    overflow: hidden;
+}
+
+.moldura-imagem img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    border-radius: 20px;
+    object-position: center 20%;
+}
+
+.secao h2 {
+    font-size: 2rem;
+    margin-bottom: 14px;
+}
+
+.secao-intro {
+    max-width: 720px;
+    margin-bottom: 28px;
+}
+
+.skills-grid,
+.projetos-grid {
+    display: grid;
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+    gap: 22px;
+}
+
+.card-skill,
+.card-projeto,
+.contato-conteudo {
+    border: 1px solid var(--line);
+    background-color: var(--surface-alt);
+}
+
+.card-skill,
+.card-projeto {
+    padding: 24px;
+}
+
+.card-skill h3,
+.card-projeto h3 {
+    font-size: 1.2rem;
+    margin-bottom: 10px;
+}
+
+.card-projeto {
+    overflow: hidden;
+}
+
+.projeto-imagem-link {
+    display: block;
+    margin: -24px -24px 20px;
+    border-bottom: 1px solid var(--line);
+}
+
+.projeto-imagem {
+    width: 100%;
+    aspect-ratio: 16 / 9;
+    object-fit: cover;
+    transition: transform 0.25s ease, opacity 0.25s ease;
+}
+
+.projeto-imagem-link:hover .projeto-imagem {
+    transform: scale(1.02);
+    opacity: 0.9;
+}
+
+.texto-apoio {
+    margin-top: 26px;
+    max-width: 760px;
+}
+
+.contato-conteudo {
+    margin-top: 20px;
+    padding: 24px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    gap: 24px;
+    flex-wrap: wrap;
+}
+
+.redes-sociais {
+    list-style: none;
+    display: flex;
+    gap: 16px;
+}
+
+.redes-sociais img {
+    width: 42px;
+    height: 42px;
+}
+
+footer {
+    border-top: 1px solid var(--line);
+    padding-top: 20px;
+}
+
+footer p {
+    color: var(--muted);
     text-align: center;
-    padding: 10px;
+    font-size: 0.95rem;
 }
 
-/*@keyframes mover{
-    0%{
-        transform: translateY(0);
+@media (max-width: 860px) {
+    .hero,
+    .skills-grid,
+    .projetos-grid {
+        grid-template-columns: 1fr;
     }
-    100%{
-        transform: translateY(10px);
+
+    .hero {
+        text-align: center;
     }
-}*/
+
+    .hero-imagem {
+        order: -1;
+    }
+
+    .secao-intro,
+    .texto-apoio {
+        max-width: none;
+    }
+}
+
+@media (max-width: 640px) {
+    .pagina {
+        width: min(100% - 20px, 1120px);
+        margin: 10px auto;
+        padding: 18px;
+    }
+
+    .topo {
+        flex-direction: column;
+    }
+
+    .menu {
+        justify-content: center;
+    }
+
+    main {
+        gap: 56px;
+        padding: 40px 0;
+    }
+
+    .hero h1 {
+        font-size: 2.5rem;
+    }
+
+    .contato-conteudo {
+        justify-content: center;
+        text-align: center;
+    }
+}
