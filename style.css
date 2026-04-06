@@ -1,6 +1,5 @@
 :root {
     --bg: #000000;
-    --surface: #0d0d0d;
     --surface-alt: #121212;
     --text: #f4f4f4;
     --muted: #bdbdbd;
@@ -93,14 +92,6 @@ main {
     gap: 40px;
 }
 
-.destaque {
-    color: var(--muted);
-    text-transform: uppercase;
-    letter-spacing: 0.18em;
-    font-size: 0.8rem;
-    margin-bottom: 18px;
-}
-
 .hero h1,
 .secao h2 {
     font-family: Georgia, "Times New Roman", serif;
@@ -137,7 +128,6 @@ main {
     width: min(320px, 100%);
     aspect-ratio: 4 / 5;
     border-radius: 28px;
-    padding: 0;
     border: 1px solid var(--line);
     background: linear-gradient(145deg, #1a1a1a, #050505);
     box-shadow: 0 0 0 10px rgba(255, 255, 255, 0.03);
