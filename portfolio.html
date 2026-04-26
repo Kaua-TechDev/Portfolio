@@ -7,16 +7,23 @@
     <link rel="stylesheet" href="style.css">
 </head>
 <body>
+    <div id="topo"></div>
     <div class="pagina">
         <header class="topo">
             <p class="marca">Kauã Luiz</p>
-            <nav aria-label="Menu principal">
-                <ul class="menu">
-                    <li><a href="#about">Sobre Mim</a></li>
-                    <li><a href="#skills">Skills</a></li>
-                    <li><a href="#projects">Projetos</a></li>
-                </ul>
-            </nav>
+            <div class="topo-acoes">
+                <nav aria-label="Menu principal">
+                    <ul class="menu">
+                        <li><a href="#about">Sobre Mim</a></li>
+                        <li><a href="#skills">Skills</a></li>
+                        <li><a href="#projects">Projetos</a></li>
+                    </ul>
+                </nav>
+                <button class="botao-tema" id="botao-tema" type="button" aria-label="Ativar tema claro" title="Ativar tema claro">
+                    <span class="icone-tema icone-sol" aria-hidden="true"></span>
+                    <span class="icone-tema icone-lua" aria-hidden="true"></span>
+                </button>
+            </div>
         </header>
 
         <main>
@@ -127,5 +134,11 @@
             <p>© Kauã Luiz 2026. Todos os direitos reservados.</p>
         </footer>
     </div>
+
+    <button class="botao-topo" id="botao-topo" type="button" aria-label="Voltar ao topo">
+        ^
+    </button>
+
+    <script src="script.js"></script>
 </body>
 </html>

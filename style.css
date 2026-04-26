@@ -1,10 +1,37 @@
 :root {
     --bg: #000000;
+    --bg-accent-1: rgba(255, 255, 255, 0.08);
+    --bg-accent-2: rgba(255, 255, 255, 0.05);
+    --page-bg: rgba(0, 0, 0, 0.78);
+    --surface: #0a0a0a;
     --surface-alt: #121212;
     --text: #f4f4f4;
     --muted: #bdbdbd;
     --line: #2d2d2d;
     --highlight: #f0f0f0;
+    --frame-bg: linear-gradient(145deg, #1a1a1a, #050505);
+    --frame-ring: rgba(255, 255, 255, 0.03);
+    --button-bg: rgba(18, 18, 18, 0.95);
+    --button-border: #4a4a4a;
+    --button-hover: #7a7a7a;
+}
+
+body.tema-claro {
+    --bg: #e9e1d4;
+    --bg-accent-1: rgba(255, 255, 255, 0.85);
+    --bg-accent-2: rgba(102, 76, 35, 0.12);
+    --page-bg: rgba(255, 252, 246, 0.96);
+    --surface: #f4ede2;
+    --surface-alt: #fffdf8;
+    --text: #111111;
+    --muted: #3f3a34;
+    --line: #b7aa97;
+    --highlight: #000000;
+    --frame-bg: linear-gradient(145deg, #fff7eb, #e7dbc8);
+    --frame-ring: rgba(17, 17, 17, 0.12);
+    --button-bg: rgba(255, 252, 246, 0.98);
+    --button-border: #9f907d;
+    --button-hover: #6e604f;
 }
 
 * {
@@ -19,12 +46,13 @@ html {
 
 body {
     background:
-        radial-gradient(circle at top right, rgba(255, 255, 255, 0.08), transparent 18%),
-        radial-gradient(circle at left center, rgba(255, 255, 255, 0.05), transparent 22%),
+        radial-gradient(circle at top right, var(--bg-accent-1), transparent 18%),
+        radial-gradient(circle at left center, var(--bg-accent-2), transparent 22%),
         var(--bg);
     color: var(--text);
     font-family: "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
     min-height: 100vh;
+    transition: background-color 0.25s ease, color 0.25s ease;
 }
 
 a {
@@ -41,7 +69,8 @@ img {
     margin: 24px auto;
     padding: 24px;
     border: 1px solid var(--line);
-    background-color: rgba(0, 0, 0, 0.78);
+    background-color: var(--page-bg);
+    transition: background-color 0.25s ease, border-color 0.25s ease;
 }
 
 .topo {
@@ -51,6 +80,12 @@ img {
     gap: 24px;
     padding-bottom: 20px;
     border-bottom: 1px solid var(--line);
+}
+
+.topo-acoes {
+    display: flex;
+    align-items: center;
+    gap: 16px;
 }
 
 .marca {
@@ -76,6 +111,90 @@ img {
 
 .menu a:hover {
     color: var(--highlight);
+}
+
+.botao-tema {
+    width: 56px;
+    height: 56px;
+    padding: 0;
+    position: relative;
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    border: 1px solid var(--button-border);
+    background-color: var(--button-bg);
+    color: var(--text);
+    border-radius: 50%;
+    cursor: pointer;
+    transition: border-color 0.25s ease, background-color 0.25s ease, color 0.25s ease, transform 0.25s ease;
+}
+
+.botao-tema:hover {
+    border-color: var(--button-hover);
+    transform: translateY(-1px);
+}
+
+.icone-tema {
+    position: absolute;
+    inset: 0;
+    margin: auto;
+    transition: opacity 0.25s ease, transform 0.25s ease;
+}
+
+.icone-sol {
+    width: 20px;
+    height: 20px;
+    border-radius: 50%;
+    border: 3px solid currentColor;
+    box-shadow:
+        0 -12px 0 -9px currentColor,
+        0 12px 0 -9px currentColor,
+        12px 0 0 -9px currentColor,
+        -12px 0 0 -9px currentColor,
+        8px 8px 0 -9px currentColor,
+        -8px 8px 0 -9px currentColor,
+        8px -8px 0 -9px currentColor,
+        -8px -8px 0 -9px currentColor;
+    opacity: 0;
+    transform: scale(0.7) rotate(-30deg);
+}
+
+.icone-lua {
+    width: 24px;
+    height: 24px;
+    position: absolute;
+    border-radius: 50%;
+    transform: scale(1) rotate(28deg);
+}
+
+.icone-lua::before,
+.icone-lua::after {
+    content: "";
+    position: absolute;
+    border-radius: 50%;
+}
+
+.icone-lua::before {
+    inset: 0;
+    background-color: currentColor;
+}
+
+.icone-lua::after {
+    width: 18px;
+    height: 18px;
+    top: 1px;
+    left: 8px;
+    background-color: var(--button-bg);
+}
+
+body.tema-claro .icone-sol {
+    opacity: 1;
+    transform: scale(1) rotate(0deg);
+}
+
+body.tema-claro .icone-lua {
+    opacity: 0;
+    transform: scale(0.7) rotate(58deg);
 }
 
 main {
@@ -129,8 +248,8 @@ main {
     aspect-ratio: 4 / 5;
     border-radius: 28px;
     border: 1px solid var(--line);
-    background: linear-gradient(145deg, #1a1a1a, #050505);
-    box-shadow: 0 0 0 10px rgba(255, 255, 255, 0.03);
+    background: var(--frame-bg);
+    box-shadow: 0 0 0 10px var(--frame-ring);
     overflow: hidden;
 }
 
@@ -164,6 +283,7 @@ main {
 .contato-conteudo {
     border: 1px solid var(--line);
     background-color: var(--surface-alt);
+    transition: background-color 0.25s ease, border-color 0.25s ease;
 }
 
 .card-skill,
@@ -236,6 +356,38 @@ footer p {
     font-size: 0.95rem;
 }
 
+.botao-topo {
+    position: fixed;
+    right: 24px;
+    bottom: 24px;
+    padding: 12px 18px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    border: 1px solid var(--button-border);
+    border-radius: 999px;
+    background-color: var(--button-bg);
+    color: var(--text);
+    font-size: 1.45rem;
+    line-height: 1;
+    cursor: pointer;
+    box-shadow: 0 12px 28px rgba(0, 0, 0, 0.35);
+    opacity: 0;
+    visibility: hidden;
+    transform: translateY(12px);
+    transition: opacity 0.25s ease, transform 0.25s ease, visibility 0.25s ease, border-color 0.25s ease;
+}
+
+.botao-topo:hover {
+    border-color: var(--button-hover);
+}
+
+.botao-topo.visivel {
+    opacity: 1;
+    visibility: visible;
+    transform: translateY(0);
+}
+
 @media (max-width: 860px) {
     .hero,
     .skills-grid,
@@ -268,8 +420,18 @@ footer p {
         flex-direction: column;
     }
 
+    .topo-acoes {
+        flex-direction: column;
+        width: 100%;
+    }
+
     .menu {
         justify-content: center;
+    }
+
+    .botao-tema {
+        width: 56px;
+        max-width: none;
     }
 
     main {
@@ -284,5 +446,11 @@ footer p {
     .contato-conteudo {
         justify-content: center;
         text-align: center;
+    }
+
+    .botao-topo {
+        right: 16px;
+        bottom: 16px;
+        padding: 10px 16px;
     }
 }
