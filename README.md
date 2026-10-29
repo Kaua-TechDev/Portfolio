@@ -2,7 +2,7 @@
 
 Site de portfólio pessoal desenvolvido com HTML, CSS e JavaScript puro.
 
-🔗 **[Ver ao vivo](https://kaua-techdev.github.io/Portfolio/)** *(caso esteja publicado no GitHub Pages)*
+🔗 **[Ver ao vivo](https://kaua-techdev.github.io/Portfolio/)** 
 
 ---
 
