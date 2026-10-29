@@ -17,6 +17,7 @@
                         <li><a href="#about">Sobre Mim</a></li>
                         <li><a href="#skills">Skills</a></li>
                         <li><a href="#projects">Projetos</a></li>
+                        <li><a href="#contact">Contato</a></li>
                     </ul>
                 </nav>
                 <button class="botao-tema" id="botao-tema" type="button" aria-label="Ativar tema claro" title="Ativar tema claro">
@@ -31,12 +32,12 @@
                 <div class="hero-texto">
                     <h1>Olá, eu sou o Kauã Luiz.</h1>
                     <p class="descricao-principal">
-                        Sou um estudante de programação em constante evolução, com foco especial em desenvolvimento backend.
-                        Atualmente curso T.I e sigo construindo a base para me tornar Engenheiro de Software.
+                        Desenvolvedor backend baseado em Rio das Ostras – RJ. Stack principal:
+                        Python (FastAPI, Flask), PostgreSQL, Docker, Azure e GitHub Actions.
                     </p>
                     <p class="descricao-secundaria">
-                        Gosto de entender como as aplicações funcionam por trás das interfaces, estudando lógica,
-                        estruturas de dados, APIs REST, SQL e boas práticas de segurança para escrever soluções limpas e eficientes.
+                        Estagiando na Corcovado GeoSub (jul/2025–jan/2027). Cursando
+                        Engenharia de Software na Uninter. Inglês B2.
                     </p>
                 </div>
 
@@ -50,31 +51,30 @@
             <section class="secao" id="skills">
                 <h2>Minhas Skills</h2>
                 <p class="secao-intro">
-                    Atualmente, aprofundo meus conhecimentos em tecnologias e fundamentos que reforçam meu objetivo de atuar com backend.
+                    Tecnologias e fundamentos que aplico no desenvolvimento de backends.
                 </p>
 
                 <div class="skills-grid">
                     <article class="card-skill">
-                        <h3>APIs REST</h3>
-                        <p>Criação de rotas, organização de endpoints e comunicação entre sistemas.</p>
-                    </article>
-                    <article class="card-skill">
-                        <h3>SQL</h3>
-                        <p>Consultas, modelagem básica e manipulação de dados para aplicações reais.</p>
-                    </article>
-                    <article class="card-skill">
-                        <h3>Segurança</h3>
-                        <p>Estudo de boas práticas para proteger aplicações e dados.</p>
-                    </article>
-                    <article class="card-skill">
                         <h3>Python</h3>
-                        <p>Desenvolvimento de lógica, automações e estruturação de projetos.</p>
+                        <p>APIs com FastAPI e Flask, automações e organização de projetos em camadas.</p>
+                    </article>
+                    <article class="card-skill">
+                        <h3>APIs REST</h3>
+                        <p>Design de rotas e endpoints, validação de dados e integração entre sistemas.</p>
+                    </article>
+                    <article class="card-skill">
+                        <h3>Bancos de dados</h3>
+                        <p>Modelagem relacional e consultas SQL em PostgreSQL e MySQL.</p>
+                    </article>
+                    <article class="card-skill">
+                        <h3>DevOps &amp; Segurança</h3>
+                        <p>Containers com Docker, CI/CD com GitHub Actions, deploy na Azure e boas práticas de segurança.</p>
                     </article>
                 </div>
 
                 <p class="texto-apoio">
-                    Sou empenhado e persistente. Gosto de resolver problemas complexos e otimizar códigos,
-                    porque para mim o backend é o coração de qualquer aplicação.
+                    Gosto de resolver problemas complexos e otimizar código — para mim, o backend é o coração de qualquer aplicação.
                 </p>
             </section>
 
@@ -88,20 +88,34 @@
                         </a>
                         <h3>Helpdesk System</h3>
                         <p>
-                            Sistema corporativo de tickets criado para abrir chamados de suporte em diferentes setores de uma empresa.
-                            O projeto foi desenvolvido com Python e JavaScript.
+                            Sistema corporativo de tickets para abertura e acompanhamento de chamados de suporte
+                            entre os setores de uma empresa.
                         </p>
+                        <ul class="projeto-tags" aria-label="Tecnologias">
+                            <li>Python</li>
+                            <li>JavaScript</li>
+                            <li>HTML/CSS</li>
+                        </ul>
+                        <a class="botao-projeto" href="https://github.com/Kaua-TechDev/Helpdesk-System" target="_blank" rel="noopener noreferrer">Ver no GitHub</a>
                     </article>
 
                     <article class="card-projeto">
-                        <a class="projeto-imagem-link" href="https://github.com/Kaua-TechDev/Portfolio" target="_blank" rel="noopener noreferrer" aria-label="Abrir repositório do Portfolio">
-                            <img class="projeto-imagem" src="imagens/image_portfolio.png" alt="Imagem do projeto Portfolio">
+                        <a class="projeto-imagem-link" href="https://github.com/Kaua-TechDev/Tutoria_IA" target="_blank" rel="noopener noreferrer" aria-label="Abrir repositório do Tutoria IA">
+                            <img class="projeto-imagem" src="imagens/image_tutoria.png" alt="Capa do projeto Tutória, tutor de trilhas de estudo com IA">
                         </a>
-                        <h3>Portfolio</h3>
+                        <h3>Tutoria IA</h3>
                         <p>
-                            Site de apresentação pessoal feito com HTML e CSS puro para mostrar meu perfil,
-                            minhas habilidades e alguns dos meus trabalhos de forma direta e visual.
+                            Tutor educacional com IA generativa que adapta linguagem e nível ao perfil do aluno.
+                            Inclui gamificação (XP, níveis e conquistas) e painel para responsáveis com controle de acesso por papel.
                         </p>
+                        <ul class="projeto-tags" aria-label="Tecnologias">
+                            <li>Python</li>
+                            <li>Flask</li>
+                            <li>SQLAlchemy</li>
+                            <li>MySQL</li>
+                            <li>OpenAI API</li>
+                        </ul>
+                        <a class="botao-projeto" href="https://github.com/Kaua-TechDev/Tutoria_IA" target="_blank" rel="noopener noreferrer">Ver no GitHub</a>
                     </article>
                 </div>
             </section>
@@ -110,8 +124,7 @@
                 <h2>Contato</h2>
                 <div class="contato-conteudo">
                     <div>
-                        <p><strong>Email:</strong> kaua.desenvolvimento@emails.com</p>
-                        <p><strong>Telefone:</strong> 4002-8922</p>
+                        <p><strong>Email:</strong> <a href="mailto:techkaua.business@gmail.com">techkaua.business@gmail.com</a></p>
                     </div>
 
                     <ul class="redes-sociais">
@@ -121,7 +134,7 @@
                             </a>
                         </li>
                         <li>
-                            <a href="https://www.linkedin.com/in/kaua-luiz-234524169?utm_source=share_via&utm_content=profile&utm_medium=member_ios" target="_blank" rel="noopener noreferrer" aria-label="LinkedIn">
+                            <a href="https://www.linkedin.com/in/kaua-luiz-234524169" target="_blank" rel="noopener noreferrer" aria-label="LinkedIn">
                                 <img src="https://skillicons.dev/icons?i=linkedin" alt="LinkedIn">
                             </a>
                         </li>
